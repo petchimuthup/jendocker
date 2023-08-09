@@ -19,4 +19,5 @@ pipeline {
 				sh 'docker push 826316/webapp02'
 				}
 		}
+	}
 }
