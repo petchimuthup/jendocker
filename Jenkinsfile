@@ -6,7 +6,7 @@ pipeline {
 	stages {
 		stage('image build') {
 			steps {
-				sh 'docker build -t 826316/webapp02 .'
+				sh 'docker build -t 826316/webapp04 .'
 					}
 		}
 		stage('login dockerhub') {
@@ -16,7 +16,7 @@ pipeline {
 		}
 		stage('push image') {
 			steps {
-				sh 'docker push 826316/webapp02'
+				sh 'docker push 826316/webapp04'
 				}
 		}
 	}

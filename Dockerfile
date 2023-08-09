@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM busybox
 LABEL description="this is test"
 RUN apt update -y
 RUN apt install nginx -y
