@@ -1,12 +1,12 @@
 pipeline {
 	agent {label 'jen-deploy-nodes01'}
 	environment {
-		DOCKERHUB_CREDENTIALS = credentials('dockerhub01')
+		DOCKERHUB_CREDENTIALS = credentials('dockerhub-pwd')
 		}
 	stages {
 		stage(image build) {
 			steps {
-				sh 'docker build -t 826316/webapp01 -f /home/jenkins/workspace/jendockerproj01/Dockerfile .
+				sh 'docker build -t 826316/webapp02 .
 					}
 		}
 		stage(login dockerhub) {
@@ -16,7 +16,7 @@ pipeline {
 		}
 		stage(push image) {
 			steps {
-				sh 'docker push 826316/webapp01'
+				sh 'docker push 826316/webapp02'
 				}
 		}
 }
